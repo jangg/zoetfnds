@@ -1,0 +1,104 @@
+<?php
+require_once ('../config.php');
+include_once('../classes/c_user.php');
+include_once('../classes/c_person.php');
+
+function sendEmail ($volnaam, $email, $userid, $wachtwoord)
+{
+	$mail_body  = 
+	'<html><head></head><body><p>
+	Beste ' . $volnaam . ' (' . $email . '),<br/><br/>	
+	
+	Je gebruikersnaam is ' . $userid . '<br/>
+	Je wachtwoord is ' . $wachtwoord .'<br/><br/>
+	Log in op https://www.zoetermeerfonds.nl/beheer/
+	
+	</p></body></html>';
+
+	$Name = "Zoetermeerfonds Beheer"; //senders name
+	$subject = 'Gebruikersnaam en wachtwoord'; //subject
+	$header = "From: ". $Name . " <" . 'info@benbbovenweg.nl' . ">\r\n";
+	$header .= 'MIME-Version: 1.0' . "\r\n";
+	$header .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+	
+	$result = mail($email, $subject, $mail_body, $header);
+
+}
+
+if (isset($_POST['terug']))
+{
+	header('location:index.php');
+}
+
+
+if (isset($_POST['reset']))
+{
+	unset($_SESSION['email']);
+}
+
+if (isset($_POST['aanvragen']))
+{
+	$user = new User('emailaddress', $_POST['email']);
+	
+	if ($user->id != NULL)
+	{
+		$person = new Person('id', $user->id_person);
+		sendEmail($person->voornaam, $user->emailaddress, $user->username, $user->password);
+		header('location:index.php');
+	}
+}
+
+	
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Zoetermeerfonds | beheer</title>
+		<meta name="viewport" content="width=device-width">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link href='http://fonts.googleapis.com/css?family=Cousine' rel='stylesheet' type='text/css'>		
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<link href="css/beheer_style.css" rel="stylesheet" type="text/css" /> 
+	</head>
+	<body>
+		<div class="container">
+			<div class="row header">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6" style="margin: 20px auto; text-align: center;">
+					<a href="../index.php"><img src="../img/logos/zflogo_50.png" alt="zflogo_50" width="223" height="80"></a>
+					<h1>Het Zoetermeerfonds beheer</h1>
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<h2>Mail mijn wachtwoord</h2>
+				<form role="form" method="POST" action="vergeten.php">
+					<div class="form-groups">
+						<label for="email">Emailadres</label>
+						<input name="email" type="email" class="form-control" id="email" size="35">
+					</div><br/>
+					<button name="aanvragen" value="true" type="submit" class="btn btn-primary">Stuur wachtwoord</button>
+					<button name="reset" type="submit" class="btn btn-default">Reset</button>
+					<button name="terug" type="submit" class="btn btn-default">Terug</button>
+				</form>
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
+			<div class="row footer">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+				&copy 2016 Zoetermeerfonds
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
+		</div>
+	</body>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</html>

@@ -1,0 +1,75 @@
+.questionnaire {
+	padding: 1% 0;
+	background-color: powderblue;
+    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+	border-radius: 10px;
+}
+
+.qst_balk, .qst_balk_out, .qst, .answer {
+	margin: 10px 2%;
+	padding: 20px 30px;
+	border-radius: 10px;
+}
+
+.qst_balk {
+	background-color: firebrick;
+	color: seashell;
+	cursor: pointer;
+}
+
+.qst_balk_out {
+	background-color: darkcyan;
+	color: seashell;
+	cursor: pointer;
+}
+
+
+.qst, .answer {
+	background-color: lightcyan;
+	color: DarkSlateGray;
+}
+
+.answer {
+	color: LightBlue;
+	background-color: DarkSlateGray;
+}
+
+.klaar {
+	color: black;
+	border: 1px solid black;
+}
+
+.klaar:hover {
+	border: 1px solid black;
+}
+
+.st_tekst {
+	font-size: 1.5em;
+}
+
+.radio, .toelichting {
+	font-size: 1.2em;
+	margin: 20px;
+}
+
+.scan-inleiding {
+	position: relative;
+	background-color: aliceblue;
+	padding: 2em 5%;
+	margin: 10px auto;
+	max-width: 100%;
+	border-radius: 10px;
+}
+
+span.gr {
+	background-color: white;
+	font-weight: bold;
+	color: darkcyan;
+}
+
+span.rd {
+	background-color: white;
+	font-weight: bold;
+	color: firebrick;
+
+}

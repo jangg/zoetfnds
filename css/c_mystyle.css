@@ -1,0 +1,70 @@
+
+#id1  * {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+#cm_berichten {
+	margin: 0 auto;
+	font-family: arial, sans-serif;
+	width: 660px;
+}
+
+.cm_bericht {
+	margin: 10px 0px 10px 20px;
+	width: 600px;
+	clear: both;
+	min-height: 100px;
+	
+}
+.cm_berichtblock {
+	margin-left: 10px;
+	padding: 15px;
+	float: right;
+	margin-bottom: 10px;
+	width: 380px;
+	font-size: 0.8em;
+	border-radius: 5px;
+}
+
+.cm_sideblock {
+	padding: 5px;
+	font-size: 0.7em;
+	width: 160px;
+	float: left;
+	border-radius: 5px;
+}
+
+.cm_berichttitel {
+	padding: 5px;
+	margin-bottom: 10px;
+	font-size: 1.2em;
+}
+
+.cm_berichtbuttons {
+	margin-bottom: 20px;;
+	margin-right: 15px;;
+	float: right;
+	clear: both;
+	font-size: 0.7em;
+	
+}
+.cm_berichtlijn {
+	width: 600px;
+	border: 2px solid #024e15;
+	clear: both;
+}
+#cm_formulier {
+	width: 800px;
+	font-family: arial, sans-serif;
+	margin: 0 auto;
+}
+#cm_formulier input[type=text], textarea {
+	background-color: #e6faff;
+}
+
+#cm_formulier tr > td {
+	vertical-align: top;
+}
+

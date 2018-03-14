@@ -1,0 +1,95 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+	vertical-align: top;
+    padding: 15px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+	text-align: center;
+	font-size: 4em;
+}
+
+h2, h3, h4, h5 {
+	margin-top: 0;
+}
+
+bold {
+	font-weight: 700;
+}
+button {
+	margin-top: 8px;
+}
+			
+@media print {
+  a[href]:after {
+    content: none;
+  }
+}
+
+.headerline {
+	margin-top: 5px;
+	text-align: right;
+}
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+.tg td{font-family:Arial, sans-serif;font-size:10px;padding:2px 2px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+.tg .tg-baqh{text-align:center;vertical-align:top;}
+.tg .tg-mb3i{background-color:#D2E4FC;text-align:right;vertical-align:top;}
+.tg .tg-tdrq{font-size:x-large;text-align:center;vertical-align:top}
+.tg .tg-lqy6{text-align:right;vertical-align:top;}
+.tg .tg-j0tj{background-color:#D2E4FC;text-align:center;vertical-align:top;}
+.tg .tg-j0tj-d{background-color:#D2E4FC;text-align:center;vertical-align:top;width: 60px;}
+.tg .tg-6k2t{background-color:#D2E4FC;vertical-align:top;}
+.tg .tg-yw4l{vertical-align:top;}
+
+.ta  {width: 100%; border-collapse:collapse;border-spacing:0;border-color:#999;}
+.ta td{font-family:Arial, sans-serif;font-size:12px;padding:2px 2px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+.ta th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+#myTab {
+}
+
+.tab2 {
+	margin: 0px 10px;
+}
+	body {
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 10px 50px;
+	}
+	.titel {
+		clear: both;
+		margin: 5px 0px 5px 0px;
+		color: grey;
+	}
+	.text {
+		margin-left: 70px;
+	}
+	
+	.box {
+		border: 1px solid black;
+		margin: 5px 0px;
+		padding: 15px;
+		background-color: #e6faff;
+	}
+	
+	.comment {
+		font-size: 0.9em;
+	}
+	
+	.comment > h5 {
+		color: #4169E1;
+	}
+
